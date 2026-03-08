@@ -813,3 +813,127 @@ img {
     flex-direction: column;
   }
 }
+
+
+/* ===== Real Image Styles ===== */
+
+.card-image img,
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover .card-image img,
+.featured-card:hover .featured-image img {
+  transform: scale(1.05);
+}
+
+.article-hero-image {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.article-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  display: block;
+}
+
+.article-content figure {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.article-content figcaption {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.category-hero {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.35);
+}
+
+.category-hero > *:not(.category-hero-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.category-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-hero p {
+  color: var(--color-muted);
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+.img-credit {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  opacity: 0.6;
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.img-credit a {
+  color: var(--color-muted);
+}
+
+@media (max-width: 768px) {
+  .category-hero {
+    padding: 3rem 1.5rem;
+    min-height: 200px;
+  }
+  .category-hero h1 {
+    font-size: 1.8rem;
+  }
+  .article-hero-image {
+    border-radius: 0;
+    margin: 0 -1rem 1.5rem;
+    width: calc(100% + 2rem);
+    max-width: none;
+  }
+}
